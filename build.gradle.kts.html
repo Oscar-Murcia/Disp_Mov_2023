@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>build.gradle.kts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #6897bb;}
+.s3 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+build.gradle.kts</font>
+</center></td></tr></table>
+<pre><span class="s0">plugins {</span>
+    <span class="s0">id(</span><span class="s1">&quot;com.android.application&quot;</span><span class="s0">)</span>
+    <span class="s0">id(</span><span class="s1">&quot;org.jetbrains.kotlin.android&quot;</span><span class="s0">)</span>
+<span class="s0">}</span>
+
+<span class="s0">android {</span>
+    <span class="s0">namespace = </span><span class="s1">&quot;com.example.hola_mundo&quot;</span>
+    <span class="s0">compileSdk = </span><span class="s2">33</span>
+
+    <span class="s0">defaultConfig {</span>
+        <span class="s0">applicationId = </span><span class="s1">&quot;com.example.hola_mundo&quot;</span>
+        <span class="s0">minSdk = </span><span class="s2">24</span>
+        <span class="s0">targetSdk = </span><span class="s2">33</span>
+        <span class="s0">versionCode = </span><span class="s2">1</span>
+        <span class="s0">versionName = </span><span class="s1">&quot;1.0&quot;</span>
+
+        <span class="s0">testInstrumentationRunner = </span><span class="s1">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span>
+        <span class="s0">vectorDrawables {</span>
+            <span class="s0">useSupportLibrary = </span><span class="s3">true</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+    <span class="s0">buildTypes {</span>
+        <span class="s0">release {</span>
+            <span class="s0">isMinifyEnabled = </span><span class="s3">false</span>
+            <span class="s0">proguardFiles(getDefaultProguardFile(</span><span class="s1">&quot;proguard-android-optimize.txt&quot;</span><span class="s0">)</span><span class="s3">, </span><span class="s1">&quot;proguard-rules.pro&quot;</span><span class="s0">)</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+    <span class="s0">compileOptions {</span>
+        <span class="s0">sourceCompatibility = JavaVersion.VERSION_1_8</span>
+        <span class="s0">targetCompatibility = JavaVersion.VERSION_1_8</span>
+    <span class="s0">}</span>
+    <span class="s0">kotlinOptions {</span>
+        <span class="s0">jvmTarget = </span><span class="s1">&quot;1.8&quot;</span>
+    <span class="s0">}</span>
+    <span class="s0">buildFeatures {</span>
+        <span class="s0">compose = </span><span class="s3">true</span>
+    <span class="s0">}</span>
+    <span class="s0">composeOptions {</span>
+        <span class="s0">kotlinCompilerExtensionVersion = </span><span class="s1">&quot;1.4.3&quot;</span>
+    <span class="s0">}</span>
+    <span class="s0">packaging {</span>
+        <span class="s0">resources {</span>
+            <span class="s0">excludes += </span><span class="s1">&quot;/META-INF/{AL2.0,LGPL2.1}&quot;</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s0">dependencies {</span>
+
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.core:core-ktx:1.9.0&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.6.1&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.activity:activity-compose:1.7.0&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(platform(</span><span class="s1">&quot;androidx.compose:compose-bom:2023.03.00&quot;</span><span class="s0">))</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.ui:ui&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.ui:ui-graphics&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.ui:ui-tooling-preview&quot;</span><span class="s0">)</span>
+    <span class="s0">implementation(</span><span class="s1">&quot;androidx.compose.material3:material3&quot;</span><span class="s0">)</span>
+    <span class="s0">testImplementation(</span><span class="s1">&quot;junit:junit:4.13.2&quot;</span><span class="s0">)</span>
+    <span class="s0">androidTestImplementation(</span><span class="s1">&quot;androidx.test.ext:junit:1.1.5&quot;</span><span class="s0">)</span>
+    <span class="s0">androidTestImplementation(</span><span class="s1">&quot;androidx.test.espresso:espresso-core:3.5.1&quot;</span><span class="s0">)</span>
+    <span class="s0">androidTestImplementation(platform(</span><span class="s1">&quot;androidx.compose:compose-bom:2023.03.00&quot;</span><span class="s0">))</span>
+    <span class="s0">androidTestImplementation(</span><span class="s1">&quot;androidx.compose.ui:ui-test-junit4&quot;</span><span class="s0">)</span>
+    <span class="s0">debugImplementation(</span><span class="s1">&quot;androidx.compose.ui:ui-tooling&quot;</span><span class="s0">)</span>
+    <span class="s0">debugImplementation(</span><span class="s1">&quot;androidx.compose.ui:ui-test-manifest&quot;</span><span class="s0">)</span>
+<span class="s0">}</span></pre>
+</body>
+</html>
